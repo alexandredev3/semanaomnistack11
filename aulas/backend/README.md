@@ -338,5 +338,106 @@
 
         * Como nós so estamos em mode de produção nós so precisamos colocar assim que vai permiter que nosso frontend tenha acesso.
 
+## Valitação no back-end:
+
+    [ x ] > npm install celebrate
+        * Biblioteca para fazer valitação
+
+        * Ele integra o join com o express.
+
+        * Por enquanto nós vamos fazer a nossa valitação no arquivo de routes.
+
+        * Nos vamos fazer a nossa valitação na routa de criação e alteração.
+
+
+        routes.post('/ongs', celebrate(), OngController.create);
+
+            * O celebrate tem que vim antes da criação do controller se não ele vai criar o controller e depois fazer a valitação...
+
+        
+        const { errors } = require('celebrate')
+            * Ele vai dar aquele erro 500 quando alguem colocar alguma informação errada.
+
+        app.use(errors());
+
+        ** Coloque ele dentro do index.js
+
+         O key que ele retorna da pra mexer nele la no front-end...
+
+## Testes no back-end:
+
+    - TDD ( Test-driven Development )
+
+## Configurando jest
+
+    - Serve para fazer testes na parte do front-end reactJS React Native.
+
+    [ x ] > npm install jest -D
+
+    > npx jest --init
+
+            The following questions will help Jest to create a suitable configuration for your project
+
+            √ Would you like to use Jest when running "test" script in "package.json"? ... yes
+            √ Choose the test environment that will be used for testing » node
+            √ Do you want Jest to add coverage reports? ... no
+            √ Automatically clear mock calls and instances between every test? ... yes
+        
+
+    - Crie uma pasta chamada tests
+
+
+## Tipos de testes:
+
+    INTEGRATION: Ele testa uma parte da sua aplicação de uma forma muito isolada.
+
+    UNIT: Ele testa por completo uma funcionabilidade da nossa aplicação e de rotas,
+    ele testa uma coisa muito espesifica muito isolada. por isso que nós separamos o nosso id de acesso, ele não mexe em banco de dados ele so teste algo que e unico dentro da nossa aplicação.
+
+    - > npm test 
+        * Para executar os testes.
+
+## Cnfigurando banco de dados para testes:
+
+    test: {     // Configurando para testes.
+    client: 'sqlite3',
+    connection: {
+      filename: './src/database/test.sqlite'  * Trocar db para test
+    },
+    migrations: {
+      directory: './src/database/migrations'
+    },
+    useNullAsDefault: true
+  },
+
+    * No arquivo knexfile.js
+
+
+    [ x ] > npm install cross-env
+
+
+
+    "scripts": {
+    "start": "nodemon src/index.js",
+    "test": "cross-env NODE_ENV=test jest"   <--
+    },
+
+        * La no package.json colocar isso no test  "cross-env NODE_ENV=test jest"
+
+    ** Agora quando nós temos uma variavel para iniciar em ambiente de teste.
+
+
+        const config = process.env.NODE_ENV === 'test' ? configuration.test : configuration.development ;
+
+            * No connection.js coloque isso para ter acesso a isso.
+
+## Configurando o supertest
+
+    [ x ] > npm install supertest -D 
+        * Alem de fazer chamadas api ele vai trazer alguma valitações a mais para nós.
+
+    ** Dentro da pasta src crie um arquivo server.js, e mute o index.js por app.js (Não esqueça de trocar o caminho do nodemon para server);
 
     
+
+
