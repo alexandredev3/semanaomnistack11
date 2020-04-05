@@ -32,7 +32,7 @@
 
     Query Params: Parâmetros nomeados enviadas nas rotas após "?" (filtros, paginação)
 
-    Route Paramas: Parâmetros utilizados para identificar recursos. ( São os ID's )
+    Route Params: Parâmetros utilizados para identificar recursos. ( São os ID's )
 
     Request Body: O corpo da requisição, utilizado para criar ou alterar recursos. (email, usuario, senha, etc...)
 
