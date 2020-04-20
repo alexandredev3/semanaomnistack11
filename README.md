@@ -1,6 +1,7 @@
-![Be The Hero Logo](https://user-images.githubusercontent.com/61118233/78819981-7526c680-79ad-11ea-92b1-8267ff2019ed.png)
-
-# 🚀 Semana OmniStack 11.0 🚀
+<h1 align="center">
+    <img src="https://user-images.githubusercontent.com/61118233/78819981-7526c680-79ad-11ea-92b1-8267ff2019ed.png"/>
+</h1>
+<h1 align="center"> 🚀 Semana OmniStack 11.0 🚀 </h1>
 
 ## Recursos utilizados para a criação da aplicação:
 <ul>
